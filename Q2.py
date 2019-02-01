@@ -57,6 +57,7 @@ def hammingEncoder(m):
         if r>len(m):
             return []
     genarray=hammingGeneratorMatrix(r)
+    print(str(r))
     print(str(genarray))
     print(str(m))
     m=np.array(m)
@@ -65,6 +66,6 @@ def hammingEncoder(m):
     return out
 
 
-test=[1,0,1,0]
+test=[1,0,0,0]
 print(str(hammingEncoder(test)))
 
