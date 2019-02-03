@@ -5,7 +5,7 @@
 # 1. Copy this file into the same folder as your main .py file
 # 2. In the following line, change "practical" to your file main .py file name
 
-from practical import *
+from MainFile import *
 
 # 3. Run this file (you can simply double-cick on it in the file explorer)
 # It should produce a text file called test.txt
@@ -82,7 +82,8 @@ with open('test.txt', 'w') as outfile:
             if i == 6:
                 testOutput = repetitionDecoder(inputs[i][j])
 
-        
+            #print(testOutput)
+            #print(solutions[i][j])
             if testOutput == solutions[i][j]:
                 testOutcome = 'ok\n\n'
             else:

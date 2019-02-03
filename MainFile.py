@@ -85,7 +85,6 @@ def message(a):
         out.insert(0,0) #Add a zero at location 0
     out.extend(a)
     k=((2**r)-(r)-1)
-    print(str(k))
     while len(out)<k:
         out.append(0)
     return out
@@ -100,10 +99,9 @@ def hammingEncoder(m):
             return []
     genarray=hammingGeneratorMatrix(r)
     m = np.array(m)
-    print(str(genarray))
     out = np.matmul(m,genarray)%2
-    print(str(out))
-    out.tolist
+    out=out.tolist()
+
     return out
 
 #Question 3
@@ -116,10 +114,8 @@ def hammingDecoder(v):
 
 
     H = hammingHMatrix(r)
-    print(H)
 
     i=np.matmul(v,H)%2
-    print(i)
 
     if i is [0,0,0]:
         return v
@@ -170,15 +166,18 @@ def dataFromMessage(m):
         binaryL.append(m[i])
     L=vectorToDecimal(binaryL)
     out=[]
+   # print(m)
+    if r+L>len(m):
+        return []
     for i in range(r,r+L):
+     #   print(i)
         out.append(m[i])
-
-    print("r is ",r)
-    print("binaryL is",binaryL)
+    print("R is ",r)
     print("L is ", L)
+    print(out)
     return out
 
-print(dataFromMessage([0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0]))
+
 
 
 
